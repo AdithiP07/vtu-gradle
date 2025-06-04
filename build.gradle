@@ -1,12 +1,22 @@
 plugins {
-    id 'application'
+    id 'java'
 }
+
+group = 'com.example'
+version = '1.0-SNAPSHOT'
+
 repositories {
     mavenCentral()
 }
+
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    testImplementation 'junit:junit:4.13.2'
 }
-application {
-    mainClass = 'org.example.Main'
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'org.example.Main'
+        )
+    }
 }
